@@ -14,6 +14,6 @@ This will be used to store all of our files, meeting notes, data sets and other 
 
 So for the commits these are the rules to follow: 
 
-###[folder_concerned][add/mod/del] 
+###[folder_concerned][add/mod/del] Explanation 
 
-Explanation (Add = adding a file, mod = modification, del = deletion)
+(Add = adding a file, mod = modification, del = deletion)
