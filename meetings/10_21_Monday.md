@@ -5,7 +5,7 @@ Initial meeting notes, just after the lecture:
 - agreed about the meeting next Monday
 
 
-Initial skillset assessment:
+Initial skillset assessment, 1 is no prior knowledge, 5 is expert knowledge:
 
 | Area     | Ada   | Ahmet  | Chidi  | Lingga | Gerard |
 | -------- | ----- | ------ | ------ | ------ | ------ |
