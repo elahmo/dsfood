@@ -9,11 +9,11 @@ Initial skillset assessment, 1 is no prior knowledge, 5 is expert knowledge:
 
 | Area     | Ada   | Ahmet  | Chidi  | Lingga | Gerard |
 | -------- | ----- | ------ | ------ | ------ | ------ |
-| R |  |  |  |   |  |
-| Python |  |  |  |   |  |
-| SQL |  |  |  |   |  |
-| Statistics |  |  |  |   |  |
-| HTML+JS |  |  |  |   |  |
-| Report Writing |  |  |  |   |  |
-| Presentations |  |  |  |   |  |
-| Team mgmt | | | | | |
+| R |  |  | 1 |   |  |
+| Python |  |  | 3 |   |  |
+| SQL |  |  |  |  4 |  |
+| Statistics |  |  | 3 |   |  |
+| HTML+JS |  |  | 3 |   |  |
+| Report Writing |  |  | 4 |   |  |
+| Presentations |  |  | 4 |   |  |
+| Team mgmt | | |2 | | |
