@@ -7,7 +7,6 @@ Initial meeting notes, just after the lecture:
 
 Initial skillset assessment:
 
-| Ada | Ahmet | Chidi  | Lingga | Gerard |
-| --- | ----- | ------ | ------ | ------ |
-|  |  |  |   |   |
-|  |  |  |   |   |
+| Area | Ada | Ahmet | Chidi  | Lingga | Gerard |
+| -------- | ----- | ------ | ------ | ------ |
+|          |  |  |  |   |   |
