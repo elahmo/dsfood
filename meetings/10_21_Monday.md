@@ -7,6 +7,13 @@ Initial meeting notes, just after the lecture:
 
 Initial skillset assessment:
 
-| Area | Ada | Ahmet | Chidi  | Lingga | Gerard |
-| -------- | ----- | ------ | ------ | ------ |
-|          |  |  |  |   |   |
+| Area     | Ada   | Ahmet  | Chidi  | Lingga | Gerard |
+| -------- | ----- | ------ | ------ | ------ | ------ |
+| R |  |  |  |   |  |
+| Python |  |  |  |   |  |
+| SQL |  |  |  |   |  |
+| Statistics |  |  |  |   |  |
+| HTML+JS |  |  |  |   |  |
+| Report Writing |  |  |  |   |  |
+| Presentations |  |  |  |   |  |
+| Team mgmt | | | | | |
