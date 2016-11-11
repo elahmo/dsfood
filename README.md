@@ -6,6 +6,6 @@ This will be used to store all of our files, meeting notes, data sets and other 
 
 # Structure
 
-/meetings
-/datasets
-/app
+- /meetings (used to store all of our meeting notes)
+- /datasets (used to store our datasets, both raw and cleaned)
+- /app      (source code for the app)
