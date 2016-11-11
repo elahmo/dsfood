@@ -11,7 +11,7 @@ Initial skillset assessment, 1 is no prior knowledge, 5 is expert knowledge:
 | -------- | ----- | ------ | ------ | ------ | ------ |
 | R |  |  | 1 |   |  |
 | Python |  |  | 3 |   |  |
-| SQL |  |  |  |  4 |  |
+| SQL |  |  | 4 |   |  |
 | Statistics |  |  | 3 |   |  |
 | HTML+JS |  |  | 3 |   |  |
 | Report Writing |  |  | 4 |   |  |
