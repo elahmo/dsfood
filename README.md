@@ -13,4 +13,7 @@ This will be used to store all of our files, meeting notes, data sets and other 
 # Commit convention
 
 So for the commits these are the rules to follow: 
-"[folder_concerned][add/mod/del] Explanation" (Add = adding a file, mod = modification, del = deletion)
+
+###[folder_concerned][add/mod/del] 
+
+Explanation (Add = adding a file, mod = modification, del = deletion)
