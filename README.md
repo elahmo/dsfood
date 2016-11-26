@@ -3,7 +3,6 @@ A GitHub repository for the Data Science final project regarding food, health, a
 
 This will be used to store all of our files, meeting notes, data sets and other files.
 
-
 # Structure
 
 - /meetings (used to store all of our meeting notes)
