@@ -50,3 +50,5 @@ fabric.properties
 #ahmet
 app/config/dev.py
 app/.idea/
+.DS_Store
+*/.DS_Store
