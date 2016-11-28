@@ -4,7 +4,7 @@ from pymongo import MongoClient
 app = Flask(__name__)
 
 #load the config from pyfile
-app.config.from_envvar('DSFOOD_CONFIG')
+#app.config.from_envvar('DSFOOD_CONFIG')
 #run it locally for now on
 client = MongoClient()
 
