@@ -1,4 +1,4 @@
-##### UK household and eating out expenditure on food and drink
+# UK household and eating out expenditure on food and drink
 
 ### Average per week (penny) spend on food and drinks
 
