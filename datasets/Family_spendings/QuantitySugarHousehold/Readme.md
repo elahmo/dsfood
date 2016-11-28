@@ -1,13 +1,13 @@
-##### Quantity Sugar and Soft drinks Households
+# Quantity Sugar and Soft drinks Households
 
-#### Average g/ml per person per week
+## Average g/ml per person per week
 
 ### Categories
 
 - Sugar and Preserves
 - Soft drinks
 
-## Sugar & preserves
+#### Sugar & preserves
 
 - sugar
 - jams and fruit curds
@@ -15,7 +15,7 @@
 - syrup
 - honey
 
-## Soft drinks
+#### Soft drinks
 
 - Soft drinks, concentrated, not low calorie (h)
 - Soft drinks, not concentrated,  not low calorie
