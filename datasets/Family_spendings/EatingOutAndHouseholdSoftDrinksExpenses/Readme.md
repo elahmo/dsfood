@@ -1,6 +1,6 @@
-##### Expenses Soft Drinks Eating out and Household
+# Expenses Soft Drinks Eating out and Household
 
-#### Average p per person per week spent on drinks 
+## Average p per person per week spent on drinks 
 
 ### Data 
 
