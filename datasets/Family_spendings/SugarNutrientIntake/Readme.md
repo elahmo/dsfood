@@ -1,8 +1,8 @@
-##### Sugar intake eating out & household
+# Sugar intake eating out & household
 
 ### Average g per person per day
 
-# Data Carbohydrates
+##### Data Carbohydrates
 
 - Total sugar
 - Non-milk extrinsic sugars
