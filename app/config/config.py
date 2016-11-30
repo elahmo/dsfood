@@ -1,3 +1,3 @@
 #DATABASE
 
-MONGO_URI = 'mongodb://example.com'
+MONGO_URI = 'mongodb://localhost:27017'
