@@ -16,3 +16,10 @@ So for the commits these are the rules to follow:
 ###[folder_concerned][add/mod/del] Explanation 
 
 (Add = adding a file, mod = modification, del = deletion)
+
+
+# VM Server
+
+Address : svm-sy1n15-comp6235-group.ecs.soton.ac.uk
+User    : user
+Pass    : awesomeGroup2
