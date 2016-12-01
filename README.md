@@ -27,3 +27,4 @@ Pass    : awesomeGroup2
 Note 30/11/16
 I've moved our dsfood project to /var/www as it seems to be configured in apache2 instead of running directly with flask.
 I've added wsgi and config file in apache2 but still no luck...
+Apache2 configuration named dsfood.conf located in /etc/apache2/sites-available
