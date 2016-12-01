@@ -1,5 +1,7 @@
 from flask import Flask
 from pymongo import MongoClient
+import csv
+import json
 
 app = Flask(__name__)
 
@@ -10,12 +12,13 @@ client = MongoClient('mongodb://localhost:27017/test')
 
 @app.route('/')
 def hello_world():
-	db = client.test.collection
-	#data = db.find()
-	#posts = db.posts
-	#post = {'author':'ahmet the man', 'text': 'This is just a sample text, I wonder where she is btw!'}
-	#post_id = posts.insert_one(post)
-	return str(db)
+	#CSV to JSON Conversion
+	csvfile = open('../datasets/Nutritions/Nutritions.csv', 'r')
+	reader = csv.DictReader( csvfile )
+	
+	db = client.test
+
+	return str('hai')
 
 if __name__ == '__main__':
     app.run(port=8080)
