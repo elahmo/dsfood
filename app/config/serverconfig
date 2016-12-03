@@ -1,0 +1,42 @@
+UWSGI CONFIG
+<uwsgi>
+     <plugin>python</plugin>
+     <socket>unix:///run/uwsgi/app/svm-sy1n15-comp6235-group.ecs.soton.ac.uk/svm-sy1n15-comp6235-group.ecs.soton.ac.uk.socket</socket>
+     <pythonpath>/var/www/dsfood/app/</pythonpath>
+     <app mountpoint="/">
+         <script>uwsgi</script>
+     </app>
+     <master/>
+     <callable>app</callable>
+     <module>app</module>
+     <processes>4</processes>
+     <harakiri>60</harakiri>
+     <reload-mercy>8</reload-mercy>
+     <cpu-affinity>1</cpu-affinity>
+     <stats>/tmp/stats.socket</stats>
+     <max-requests>2000</max-requests>
+     <limit-as>512</limit-as>
+     <reload-on-as>512</reload-on-as>
+     <reload-on-rss>384</reload-on-rss>
+     <no-orphans/>
+     <vacuum/>
+     <lazy-apps/>
+ </uwsgi>
+
+
+NGINX CONFIG
+ server {
+         listen          80;
+         access_log /srv/www/dsfood/app/logs/access.log;
+         error_log /srv/www/dsfood/app/logs/error.log;
+
+	     location / {
+	         #uwsgi_pass      127.0.0.1:5000;
+	         uwsgi_pass      unix:///run/uwsgi/app/svm-sy1n15-comp6235-group.ecs.soton.ac.uk/svm-sy1n15-comp6235-group.ecs.soton.ac.uk.socket;
+	         include         uwsgi_params;
+	         uwsgi_param     UWSGI_SCHEME $scheme;
+	         uwsgi_param     SERVER_SOFTWARE    nginx/$nginx_version;
+	         uwsgi_read_timeout 60s;
+	         uwsgi_send_timeout 60s;
+	     }
+}

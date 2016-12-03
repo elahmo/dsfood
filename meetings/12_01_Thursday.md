@@ -38,9 +38,9 @@ Meeting conclusions
 TODO
 
 Rough breakdown of tasks:
-- excel -> csv @ggtio 
+- excel -> csv @ggtio @elahmo
 - frontend & backend (flask+bootstrap) @ggtio @elahmo
-- visualisation (AHMET ADD THE WEBSITES AND JS LIBS HERE ) @elahmo @Notable1
+- visualisation (http://nvd3.org and https://gionkunz.github.io/chartist-js/ ) @elahmo @Notable1
 - upload the data to MongoDB @distroipa @yh2g16
 - start the analysis of the data to extract potential relevant information @yh2g16 @distropia @Notable1 @elahmo
 
