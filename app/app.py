@@ -12,19 +12,28 @@ app = Flask(__name__)
 
 client = MongoClient('localhost', 27017)
 db = client.dsfood
-nutritions = db.nutritions
 
+#index.html
 @app.route('/')
 def main_page():
-	#session.clear()
-	dataset = nutritions.find()
-	return render_template('index.html', dataset=dataset)
+	dataset = 'nutritions'
+	collection = db[dataset]
 
+	query = collection.find()
+	return render_template('index.html', query=query)
 
+#----------------------------------------------------------------
+# Inserting Dataset
+# No need to convert csv to JSON
+# since flask is smart enough to handle bson file from pymongo
+#----------------------------------------------------------------
 @app.route('/insert_dataset')
 def insert_dataset():
-	#CSV to JSON Conversion
-	csvfile = open('/home/salgadd/dsfood/datasets/Nutritions/Nutritions.csv', 'r')
+	file_path = '/home/salgadd/dsfood/datasets/Nutritions/Nutritions.csv'
+	dataset = 'nutritions'
+	collection = db[dataset]
+
+	csvfile = open(file_path, 'r')
 	reader = csv.DictReader( csvfile )
 
 	header = [
@@ -84,10 +93,11 @@ def insert_dataset():
 		results.append(row)
 
 	#nutritions.insert_many(results)
-	dataset = nutritions.find()
+	query = collection.find()
 
-	return render_template('insert_dataset.html', dataset=dataset)
+	return render_template('insert_dataset.html', query=query)
 
+#login, still dummy with user/pass admin/admin
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	error = None
