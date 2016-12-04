@@ -4,16 +4,14 @@
   {% if session.logged_in %}
     <form action="{{ url_for('insert_dataset') }}" method=post class=insert-dataset>
       <dl>
-        <dt>Title:
-        <dd><input type=text size=30 name=title>
-        <dt>Text:
+        <dt>Nothing here, only list of datasets
         <dd><textarea name=text rows=5 cols=40></textarea>
         <dd><input type=submit value=Share>
       </dl>
     </form>
     <ul class=dataset>
     {% for item in query %}
-      <li><h2>{{ item['Food Code'] }}</h2><h2>{{ item['Food Name'] }}</h2></li>
+      <li><h2>{{ item['name'] }}</h2></li>
     {% else %}
       <li><em>Unbelievable.  No entries here so far</em>
     {% endfor %}
