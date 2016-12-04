@@ -2,21 +2,15 @@
 {% block body %}
 
   {% if session.logged_in %}
+    {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
     <form action="{{ url_for('insert_dataset') }}" method=post class=insert-dataset>
       <dl>
-        <dt>Title:
-        <dd><input type=text size=30 name=title>
-        <dt>Text:
-        <dd><textarea name=text rows=5 cols=40></textarea>
-        <dd><input type=submit value=Share>
+        <dt>Path:
+        <dd><input type=text size=30 name=path>
+        <dt>Dataset:
+        <dd><input type=text size=30 name=dataset>
+        <dd><input type=submit value=Insert>
       </dl>
     </form>
-    <ul class=dataset>
-    {% for item in query %}
-    <li><h2>{{ item['Food Code'] }}</h2><h2>{{ item['Food Name'] }}</h2></li>
-    {% else %}
-    <li><em>Unbelievable.  No entries here so far</em>
-    {% endfor %}
   {% endif %}
-  </ul>
 {% endblock %}
