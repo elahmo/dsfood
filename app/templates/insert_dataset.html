@@ -1,16 +1,21 @@
 {% extends "layout.html" %}
 {% block body %}
-
+<style>
+  i {font-weight: normal;}
+</style>
   {% if session.logged_in %}
     {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
     <form action="{{ url_for('insert_dataset') }}" method=post class=insert-dataset>
       <dl>
         <dt>Path:
         <dd><input type=text size=59 name=path>
+        <br/><i>Example: /home/salgadd/dsfood/datasets/Nutritions/Nutritions.csv</i>
         <dt>Dataset:
         <dd><input type=text size=19 name=dataset>
+        <br/><i>Example: nutritions</i>
         <dt>Delimiter:
         <dd><input type=text size=3 name=delimiter>
+        <i>; or , (depends on your data)</i>
         <dd><input type=submit value=Insert>
       </dl>
     </form>
