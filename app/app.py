@@ -33,14 +33,18 @@ def insert_dataset():
 	error = None
 	if request.method == 'POST':
 		#'/home/salgadd/dsfood/datasets/Nutritions/Nutritions.csv'
-		if request.form['path'] != '' and request.form['dataset'] != '':
+		if request.form['path'] != '' and request.form['dataset'] != '' and request.form['delimiter'] != '':
 			file_path = request.form['path']
 			dataset = request.form['dataset']
+			delimiter = str(request.form['delimiter'])
 			dataset_list = db['dataset_list']
 			collection = db[dataset]
 
 			csvfile = open(file_path, 'r')
-			reader = csv.DictReader( csvfile )
+			csv.register_dialect(
+				'dataset',
+				delimiter = delimiter,)
+			reader = csv.DictReader(csvfile, dialect='dataset')
 
 			results = []
 			for each in reader:
