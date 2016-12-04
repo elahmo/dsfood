@@ -6,9 +6,11 @@
     <form action="{{ url_for('insert_dataset') }}" method=post class=insert-dataset>
       <dl>
         <dt>Path:
-        <dd><input type=text size=30 name=path>
+        <dd><input type=text size=59 name=path>
         <dt>Dataset:
-        <dd><input type=text size=30 name=dataset>
+        <dd><input type=text size=19 name=dataset>
+        <dt>Delimiter:
+        <dd><input type=text size=3 name=delimiter>
         <dd><input type=submit value=Insert>
       </dl>
     </form>
