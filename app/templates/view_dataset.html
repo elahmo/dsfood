@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  {% if session.logged_in %}
+    {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+    <form action="{{ url_for('view_dataset') }}" method=post class=insert-dataset>
+      <dl>
+        <dt>Dataset:
+        <dd><select name="dataset" width="300px">
+            {% for opt in query_option %}
+              <option value="{{ opt.name }}" SELECTED>{{ opt.name }}</option>
+            {% else %}
+              <option value="" SELECTED></option>
+            {% endfor %}
+            </select>
+        <dd><input type=submit value=View>
+      </dl>
+    </form>
+    <ul class=dataset>
+    {% for item in query %}
+    <li><h2>{{ item }}</h2></li>
+    {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+    {% endfor %}
+  {% endif %}
+  </ul>
+{% endblock %}
