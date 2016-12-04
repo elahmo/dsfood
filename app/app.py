@@ -16,7 +16,7 @@ db = client.dsfood
 #index.html
 @app.route('/')
 def main_page():
-	dataset = 'nutritions'
+	dataset = 'dataset_list'
 	collection = db[dataset]
 
 	query = collection.find()
@@ -24,78 +24,82 @@ def main_page():
 
 #----------------------------------------------------------------
 # Inserting Dataset
+# Input path and dataset name
 # No need to convert csv to JSON
 # since flask is smart enough to handle bson file from pymongo
 #----------------------------------------------------------------
-@app.route('/insert_dataset')
+@app.route('/insert_dataset', methods=['GET', 'POST'])
 def insert_dataset():
-	file_path = '/home/salgadd/dsfood/datasets/Nutritions/Nutritions.csv'
-	dataset = 'nutritions'
-	collection = db[dataset]
+	error = None
+	if request.method == 'POST':
+		#'/home/salgadd/dsfood/datasets/Nutritions/Nutritions.csv'
+		if request.form['path'] != '' and request.form['dataset'] != '':
+			file_path = request.form['path']
+			dataset = request.form['dataset']
+			dataset_list = db['dataset_list']
+			collection = db[dataset]
 
-	csvfile = open(file_path, 'r')
-	reader = csv.DictReader( csvfile )
+			csvfile = open(file_path, 'r')
+			reader = csv.DictReader( csvfile )
 
-	header = [
-		"Food Code",
-		"Food Name",
-		"Description",
-		"Group",
-		"Previous",
-		"Main data references",
-		"Footnote",
-		"Water (g)",
-		"Total nitrogen (g)",
-		"Protein (g)",
-		"Fat (g)",
-		"Carbohydrate (g)",
-		"Energy (kcal) (kcal)",
-		"Energy (kJ) (kJ)",
-		"Starch (g)",
-		"Oligosaccharide (g)",
-		"Total sugars (g)",
-		"Glucose (g)",
-		"Galactose (g)",
-		"Fructose (g)",
-		"Sucrose (g)",
-		"Maltose (g)",
-		"Lactose (g)",
-		"Alcohol (g)",
-		"NSP (g)",
-		# AOAC fibre (g),
-		# Satd FA /100g FA (g),
-		# Satd FA /100g fd (g),
-		# n-6 poly /100g FA (g),
-		# n-6 poly /100g food (g),
-		# n-3 poly /100g FA (g),
-		# n-3 poly /100g food (g),
-		# cis-Mono FA /100g FA (g),
-		# cis-Mono FA /100g Food (g),
-		# Mono FA/ 100g FA (g),
-		# Mono FA /100g food (g),
-		# cis-Polyu FA /100g FA (g),
-		# cis-Poly FA /100g Food (g),
-		# Poly FA /100g FA (g),
-		# Poly FA /100g food (g),
-		# Sat FA excl Br /100g FA (g),
-		# Sat FA excl Br /100g food (g),
-		# Branched chain FA /100g FA (g),
-		# Branched chain FA /100g food (g),
-		# Trans FAs /100g FA (g),
-		# Trans FAs /100g food (g),
-		"Cholesterol (mg)"];
+			results = []
+			for each in reader:
+				results.append(each)
 
-	results = []
-	for each in reader:
-		row = {}
-		for field in header:
-			row[field] = each[field]
-		results.append(row)
+			collection.insert_many(results)
+			dataset_list.insert_one({'name': dataset})
+			error = 'Insert success'
+		else:
+			error = 'Empty string'
 
-	#nutritions.insert_many(results)
-	query = collection.find()
+	return render_template('insert_dataset.html', error=error)
 
-	return render_template('insert_dataset.html', query=query)
+#----------------------------------------------------------------
+# Viewing Dataset
+# input dataset name to get the data
+#----------------------------------------------------------------
+@app.route('/view_dataset', methods=['GET', 'POST'])
+def view_dataset():
+	error = None
+	dataset_list = db['dataset_list']
+	query_option = dataset_list.find()
+	if request.method == 'POST':
+		#'/home/salgadd/dsfood/datasets/Nutritions/Nutritions.csv'
+		if request.form['dataset'] != '':
+			dataset = request.form['dataset']
+			collection = db[dataset]
+
+			query = collection.find()
+		else:
+			query = []
+			error = 'Empty string'
+	else:
+		query = []
+
+	return render_template('view_dataset.html', error=error, query=query, query_option=query_option)
+
+#----------------------------------------------------------------
+# Deleting Dataset
+# Input dataset name
+#----------------------------------------------------------------
+@app.route('/delete_dataset', methods=['GET', 'POST'])
+def delete_dataset():
+	error = None
+	dataset_list = db['dataset_list']
+	query_option = dataset_list.find()
+	if request.method == 'POST':
+		#'/home/salgadd/dsfood/datasets/Nutritions/Nutritions.csv'
+		if request.form['dataset'] != '':
+			dataset = request.form['dataset']
+			collection = db[dataset]
+
+			collection.remove()
+			dataset_list.remove({'name': dataset})
+			error = 'Remove success'
+		else:
+			error = 'Empty string'
+
+	return render_template('delete_dataset.html', error=error, query_option=query_option)
 
 #login, still dummy with user/pass admin/admin
 @app.route('/login', methods=['GET', 'POST'])
