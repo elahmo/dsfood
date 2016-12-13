@@ -28,3 +28,34 @@ Note 30/11/16
 I've moved our dsfood project to /var/www as it seems to be configured in apache2 instead of running directly with flask.
 I've added wsgi and config file in apache2 but still no luck...
 Apache2 configuration named dsfood.conf located in /etc/apache2/sites-available
+
+# Layout of the page (@gg)
+
+# Webapp - The sugar Tax
+
+ ## Info to display
+
+Present the Question with graphs and data 
+	- explain the Tax and Data they rely on
+	- Basic graphs to show the importance of the subject 
+
+Show our research and findings + recommendations 
+	- UK region distribution of general sugar consumption VS health issues in those regions
+	- UK region distribution of soft drinks consumption VS health issues in those regions
+	- Soft drinks prices VS Expenses on soft drinks
+	- Soft drinks consumption VS price fluctuations
+	- Soft drinks consumption VS health issues
+	- historical sugar prices (+$ index for normaisation) VS general sugar consumption
+	- historical sugar prices VS soft drinks consumption
+
+/!\ Not forget to add Analytic data on this graphs if relevant
+
+Finish strongly with
+	- Conclusion graph on health VS soft drinks prices
+
+
+## Structure
+
+Either 
+ - a long page
+ - a multiple pages for the different information
