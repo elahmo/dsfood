@@ -1,0 +1,122 @@
+.ct-chart {
+   position: relative;
+}
+.ct-legend {
+   position: relative;
+   z-index: 10;
+   list-style: none;
+   text-align: center;
+}
+.ct-legend li {
+   position: relative;
+   padding-left: 23px;
+   margin-right: 10px;
+   margin-bottom: 3px;
+   cursor: pointer;
+   display: inline-block;
+}
+.ct-legend li:before {
+   width: 12px;
+   height: 12px;
+   position: absolute;
+   left: 0;
+   content: '';
+   border: 3px solid transparent;
+   border-radius: 2px;
+}
+.ct-legend li.inactive:before {
+   background: transparent;
+}
+.ct-legend.ct-legend-inside {
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+.ct-legend.ct-legend-inside li{
+   display: block;
+   margin: 0;
+}
+.ct-legend .ct-series-0:before {
+   background-color: #d70206;
+   border-color: #d70206;
+}
+.ct-legend .ct-series-1:before {
+   background-color: #f05b4f;
+   border-color: #f05b4f;
+}
+.ct-legend .ct-series-2:before {
+   background-color: #f4c63d;
+   border-color: #f4c63d;
+}
+.ct-legend .ct-series-3:before {
+   background-color: #d17905;
+   border-color: #d17905;
+}
+.ct-legend .ct-series-4:before {
+   background-color: #453d3f;
+   border-color: #453d3f;
+}
+
+.crazyPink li.ct-series-0:before {
+  background-color: #C2185B;
+  border-color: #C2185B;
+}
+
+.crazyPink li.ct-series-1:before {
+  background-color: #E91E63;
+  border-color: #E91E63;
+}
+
+.crazyPink li.ct-series-2:before {
+  background-color: #F06292;
+  border-color: #F06292;
+}
+.crazyPink li.inactive:before {
+  background-color: transparent;
+}
+
+.crazyPink ~ svg .ct-series-a .ct-line, .crazyPink ~ svg .ct-series-a .ct-point {
+  stroke: #C2185B;
+}
+
+.crazyPink ~ svg .ct-series-b .ct-line, .crazyPink ~ svg .ct-series-b .ct-point {
+  stroke: #E91E63;
+}
+
+.crazyPink ~ svg .ct-series-c .ct-line, .crazyPink ~ svg .ct-series-c .ct-point {
+  stroke: #F06292;
+}
+
+
+.chartist-tooltip {
+  position: absolute;
+  display: inline-block;
+  opacity: 0;
+  min-width: 5em;
+  padding: .5em;
+  background: #F4C63D;
+  color: #453D3F;
+  font-family: Oxygen,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-transition: opacity .2s linear;
+  -moz-transition: opacity .2s linear;
+  -o-transition: opacity .2s linear;
+  transition: opacity .2s linear; }
+  .chartist-tooltip:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-top-color: #F4C63D; }
+  .chartist-tooltip.tooltip-show {
+    opacity: 1; }
+
+.ct-area, .ct-line {
+  pointer-events: none; }
