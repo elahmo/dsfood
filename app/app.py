@@ -135,8 +135,22 @@ app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 @app.route('/presentation/index')
 @app.route('/presentation')
 def presentation():
-	return render_template('p_index.html')
+	#get the data from db about health and consumption
+	chart_data = {}
+	chart_data['health_years'] = []
+	chart_data['health_total'] = []
+	chart_data['health_male'] = []
+	chart_data['health_female'] = []
+	chart_data['health_unknown'] = []
+	query_health = db['health_diagnosis_gender_years.csv'].find().sort('Year', 1)
+	for result in query_health:
+		chart_data['health_years'].append(result['Year'])
+		chart_data['health_total'].append(result['All persons'].replace(',',''))
+		chart_data['health_male'].append(result['Male'].replace(',',''))
+		chart_data['health_female'].append(result['Female'].replace(',',''))
+		chart_data['health_unknown'].append(result['Unknown'].replace(',',''))
 
+	return render_template('p_index.html', chart_data = chart_data)
 
 @app.route('/presentation/health')
 def p_health():
