@@ -131,5 +131,32 @@ def logout():
 # set the secret key.  keep this really secret:
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
+
+@app.route('/presentation/index')
+@app.route('/presentation')
+def presentation():
+	return render_template('p_index.html')
+
+
+@app.route('/presentation/health')
+def p_health():
+	return render_template('p_health.html')
+
+@app.route('/presentation/price')
+def p_price():
+	return render_template('p_price.html')
+
+@app.route('/presentation/consumption')
+def p_consumtion():
+	return render_template('p_consumption.html')
+
+@app.route('/presentation/sugarprice')
+def p_sugarprice():
+	return render_template('p_sugarprice.html')
+
+@app.route('/presentation/summary')
+def p_summary():
+	return render_template('p_summary.html')
+
 if __name__ == '__main__':
-    app.run(port=8080)
+    app.run(port=8080, debug=True)
