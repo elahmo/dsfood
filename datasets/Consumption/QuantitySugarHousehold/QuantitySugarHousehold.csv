@@ -1,4 +1,4 @@
-Year,Sugar and preserves,Sugar,Jams and fruit curds,Marmalade,"Syrup, treacle",Honey,Soft drinks,"Soft drinks, concentrated, not low calorie (h)","Soft drinks, not concentrated,  not low calorie","Soft drinks, concentrated, low calorie (h)","Soft drinks, not concentrated, low calorie"
+Year,Sugar and preserves,Sugar,Jams and fruit curds,Marmalade,Syrup,Honey,Soft drinks,Soft drinks c hc,Soft drinks nc hc,Soft drinks c lc,Soft drinks nc lc
 1992,242,193,22,17,3,7,1448,731,426,103,189
 1993,233,186,21,16,3,6,1471,647,469,145,210
 1994,224,178,21,18,3,5,1513,613,484,197,220
@@ -18,7 +18,7 @@ Year,Sugar and preserves,Sugar,Jams and fruit curds,Marmalade,"Syrup, treacle",H
 2008,127,93,15,10,3,6,1.682,587,606,168,321
 2009,125,90,15,9,4,6,1.678,583,625,160,309
 2010,126,90,16,9,4,7,1.718,532,607,234,345
-2011,126,93,15,8,4,6,1.630,379,576,286,390
+2011,126,93,15,8,4,6,1.63,379,576,286,390
 2012,124,91,14,8,4,6,1.633,335,549,340,409
 2013,123,91,14,7,4,7,1.664,321,557,354,433
 2014,109,78,14,6,3,7,1.546,258,516,367,406
