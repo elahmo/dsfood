@@ -195,7 +195,7 @@ def p_price():
 		chart_data['prices_years'].append(result['Year'])
 		chart_data['prices_price'].append(result['Price per liter in GP'])
 
-	# consumption
+	# consumption for huseholds
 	chart_data['consumption_years'] = []
 	chart_data['consumption_7'] = []
 	chart_data['consumption_8'] = []
@@ -215,7 +215,39 @@ def p_price():
 
 @app.route('/presentation/consumption')
 def p_consumtion():
-	return render_template('p_consumption.html')
+	chart_data = {}
+	# consumption, total household
+	chart_data['consumption_years'] = []
+	chart_data['consumption_1'] = []
+	chart_data['consumption_2'] = []
+	chart_data['consumption_3'] = []
+	chart_data['consumption_4'] = []
+	chart_data['consumption_5'] = []
+	query_consumption = db['AllFoodExpenses.csv'].find().sort('Year', 1)
+	for result in query_consumption:
+		chart_data['consumption_years'].append(result['Year'])
+		chart_data['consumption_1'].append(result['Soft drinks'].replace('.',''))
+		chart_data['consumption_2'].append(result['Soft drinks c hc'])
+		chart_data['consumption_3'].append(result['Soft drinks nc hc'])
+		chart_data['consumption_4'].append(result['Soft drinks c lc'])
+		chart_data['consumption_5'].append(result['Soft drinks nc lc'])
+
+	# consumption, eating out expenses
+	chart_data['eatingout_years'] = []
+	chart_data['eatingout_1'] = []
+	chart_data['eatingout_2'] = []
+	chart_data['eatingout_3'] = []
+	chart_data['eatingout_4'] = []
+	chart_data['eatingout_5'] = []
+	query_consumption = db['TotalExpensesEatingOutAndHousehold.csv'].find().sort('Year', 1)
+	for result in query_consumption:
+		chart_data['eatingout_years'].append(result['Year'])
+		chart_data['eatingout_1'].append(result['Soft drinks'].replace('.',''))
+		chart_data['eatingout_2'].append(result['Soft drinks c hc'])
+		chart_data['eatingout_3'].append(result['Soft drinks nc hc'])
+		chart_data['eatingout_4'].append(result['Soft drinks c lc'])
+		chart_data['eatingout_5'].append(result['Soft drinks nc lc'])
+	return render_template('p_consumption.html', chart_data = chart_data)
 
 @app.route('/presentation/sugarprice')
 def p_sugarprice():
