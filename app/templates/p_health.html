@@ -1,3 +1,4 @@
+{% set active_page = 'health' %}
 {% extends "p_layout.html" %}
 {% block content %}
 <div class="container">
@@ -6,8 +7,10 @@
 	    <h3 class="panel-title">Sugar tax</h3>
 	  </div>
 	  <div class="panel-body">
-	  	<img src="https://placehold.it/450x250">
-
+	  	<div id="choroplethmap"></div>
+	    <script>
+	      DiabetesChoropleth.init('choroplethmap');
+	    </script>
 	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

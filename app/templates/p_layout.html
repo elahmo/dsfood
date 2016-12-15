@@ -7,17 +7,27 @@
     {% endif %}
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
+    <script src="/static/js/jquery.min.js"></script>
     <link href="/static/css/bootstrap-material-design.min.css" rel="stylesheet">
     <link href="/static/css/ripples.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/chartist.min.css">
     <script src="/static/js/chartist.min.js"></script>
     <script src="/static/js/chartist_plugins.js"></script>
     <link rel="stylesheet" href="/static/css/custom.css">
+    {% if active_page == 'health' %}
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <script src="/static/js/maps.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    {% endif%}
   </head>
   <body>
     {% include 'p_navbar.html' %}
     {% block content %}{% endblock %}
-    <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/ripples.min.js"></script>
     <script src="/static/js/material.min.js"></script>

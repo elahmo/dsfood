@@ -120,3 +120,152 @@
 
 .ct-area, .ct-line {
   pointer-events: none; }
+
+
+#choroplethmap {
+  width: 100%;
+  height: 400px;
+}
+
+
+/*legen for the map and icons*/
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.chart {
+  margin: 0 auto;
+  font-size: 8px;
+}
+
+.line {
+  fill: none;
+  stroke: #41B6C4;
+  stroke-width: 2;
+}
+
+.mycluster {
+  width: 17px;
+  height: 17px;
+  line-height: 30px;
+  background-color: lightcyan;
+  border: 1px solid lightcyan;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px grey;
+  color: black;
+  min-width: 9px;
+  text-align: center;
+  margin: auto;
+  font: 10px Helvetica, Verdana, Tahoma;
+}
+
+.myDefaultIcon {
+  background: grey;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.iconA {
+  background: #F0F9E8;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.iconB {
+  background: #CCEBC5;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.iconC {
+  background: #A8DDB5;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.iconD {
+  background: #7BCCC4;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.iconE {
+  background: #43A2CA;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.iconF {
+  background: #0868AC;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+rect {
+  stroke: #41B6C4;
+  fill: #41B6C4;
+}
+
+rect#tooltip {
+  stroke: #41B6C4;
+  stroke-width: 2;
+  fill: white;
+}
+
+circle {
+  stroke: #41B6C4;
+  fill: #41B6C4;
+}
+
+circle#ring {
+  stroke: #41B6C4;
+  fill: none;
+  stroke-width: 1;
+}
+
+line#drop {
+  fill: none;
+  stroke: #41B6C4;
+  stroke-width: 2;
+  /*stroke-dasharray: 3, 3;*/
+}
+
+#spendmap {
+  width: 100%;
+  height: 600px;
+}
+
+.info {
+  padding: 6px 8px;
+  font: "Helvetica Neue", Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, .6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
