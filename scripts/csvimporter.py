@@ -16,6 +16,10 @@ def filename_helper(path):
     head, tail = ntpath.split(path)
     return tail or ntpath.basename(head)
 
+#clear all data first
+dataset_list = db.collection_names()
+for col in dataset_list:
+	db.col.drop()
 #do the actual insertion
 for csv_file in csv_files:
 	try:
