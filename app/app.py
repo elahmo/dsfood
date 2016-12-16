@@ -251,7 +251,29 @@ def p_consumtion():
 
 @app.route('/presentation/sugarprice')
 def p_sugarprice():
-	return render_template('p_sugarprice.html')
+	chart_data = {}
+	# monhtly price
+	chart_data['price_date'] = []
+	chart_data['price_1'] = []
+	chart_data['normalised_date'] = []
+	chart_data['normalised_1'] = []
+	normalisation = {}
+
+	# monhtly price, normalised
+	query_normalisation = db['usdindex_10_16_monthly.csv'].find()
+	initialValue = 80.44
+
+	for result in query_normalisation:
+		normalisation[result['Date']] = float(result[' Index'])/initialValue
+
+	query_monthly = db['monthly_sugar_price_10_16.csv'].find().sort('Date', 1)
+	for result in query_monthly:
+		chart_data['price_date'].append(result['Date'])
+		chart_data['price_1'].append(float(result['Price']))
+		chart_data['normalised_date'].append(result['Date'])
+		chart_data['normalised_1'].append(float(result['Price'])*normalisation[result['Date']])
+
+	return render_template('p_sugarprice.html', chart_data = chart_data)
 
 @app.route('/presentation/summary')
 def p_summary():
