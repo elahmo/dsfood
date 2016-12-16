@@ -4,6 +4,7 @@
 # Tempfiles
 .~*
 .gitignore~
+*DS_Store*
 
 # User-specific stuff:
 .idea/*
