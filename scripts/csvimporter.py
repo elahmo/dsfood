@@ -10,7 +10,7 @@ client = MongoClient('localhost', 27017)
 db = client.dsfood
 
 #goes through all of the files in the datasets directory
-csv_files = [y for x in os.walk('../datasets') for y in glob(os.path.join(x[0], '*.csv'))]
+csv_files = [y for x in os.walk('../datasets/Sugar prices') for y in glob(os.path.join(x[0], '*.csv'))]
 
 def filename_helper(path):
     head, tail = ntpath.split(path)
@@ -29,6 +29,8 @@ for csv_file in csv_files:
 		delimiter = ',' #change this if your dataset uses something else
 		if 'Sugar prices' in file_path or 'US Dollar Index' in file_path:
 			delimiter = ';'
+		if 'IMF' in file_path:
+			delimiter = ','
 		dataset_list = db['dataset_list']
 		collection = db[dataset]
 
