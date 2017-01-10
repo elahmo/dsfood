@@ -184,35 +184,6 @@ def presentation():
 def p_health():
 	return render_template('p_health.html')
 
-@app.route('/presentation/price')
-def p_price():
-	# prices
-	chart_data = {}
-	chart_data['prices_years'] = []
-	chart_data['prices_price'] = []
-	query_price = db['softdrinkprices.csv'].find().sort('Year', 1)
-	for result in query_price:
-		chart_data['prices_years'].append(result['Year'])
-		chart_data['prices_price'].append(result['Price per liter in GP'])
-
-	# consumption for huseholds
-	chart_data['consumption_years'] = []
-	chart_data['consumption_7'] = []
-	chart_data['consumption_8'] = []
-	chart_data['consumption_9'] = []
-	chart_data['consumption_10'] = []
-	chart_data['consumption_11'] = []
-	query_consumption = db['QuantitySugarHousehold.csv'].find().sort('Year', 1)
-	for result in query_consumption:
-		chart_data['consumption_years'].append(result['Year'])
-		chart_data['consumption_7'].append(result['Soft drinks'].replace('.',''))
-		chart_data['consumption_8'].append(result['Soft drinks c hc'])
-		chart_data['consumption_9'].append(result['Soft drinks nc hc'])
-		chart_data['consumption_10'].append(result['Soft drinks c lc'])
-		chart_data['consumption_11'].append(result['Soft drinks nc lc'])
-
-	return render_template('p_price.html', chart_data=chart_data)
-
 @app.route('/presentation/consumption')
 def p_consumtion():
 	chart_data = {}

@@ -251,9 +251,10 @@ line#drop {
   padding: 6px 8px;
   font: "Helvetica Neue", Helvetica, sans-serif;
   background: white;
-  background: rgba(255, 255, 255, .6);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, .8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
+  font-size: 14px !important;
 }
 
 .legend {
