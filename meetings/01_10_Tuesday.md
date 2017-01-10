@@ -13,15 +13,14 @@ Meeting conclusions
 	- finish the stuff:
 		- map, add multiple years (Ahmet)
 		- explain the charts and add some description (Ada)
-		- ensure charts are readable and improve them, move the first chart from soft drink prices to the next tab, remove the soft drink prices tab (Chidi)
+		- ensure charts are readable and improve them, move the first chart from soft drink prices to the next tab (Ahmet)
+		- do analyis about USA sugar, consumption and obesity (this need to be found, per year); Chidi, see is there a correlation between these paris, 
 		- create a new CSV combination from obestiy and consumption, in a CSV in a format:	Year, Region, Obesity (unit1), Consumption (unit2), sample at the end, go through the datasets and see is there anything that we missed (Gerard)
 		- prepare the summary page, and charts, and conclusion: charts, plots, and tables  so we can code them tomorrow (Linnga)
 	- next meeting: tomorrow, 5
 	- finalise presentation schedules, prepare group feedback, record demo, finalise project
 
-
 Attendees
-
 - everyone was present
 
 
