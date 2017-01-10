@@ -218,11 +218,17 @@ def p_consumtion():
 	chart_data = {}
 	# consumption, total household
 	chart_data['consumption_years'] = []
+	chart_data['consumption_years2'] = []
 	chart_data['consumption_1'] = []
 	chart_data['consumption_2'] = []
 	chart_data['consumption_3'] = []
 	chart_data['consumption_4'] = []
 	chart_data['consumption_5'] = []
+	chart_data['consumption_7'] = []
+	chart_data['consumption_8'] = []
+	chart_data['consumption_9'] = []
+	chart_data['consumption_10'] = []
+	chart_data['consumption_11'] = []
 	query_consumption = db['AllFoodExpenses.csv'].find().sort('Year', 1)
 	for result in query_consumption:
 		chart_data['consumption_years'].append(result['Year'])
@@ -247,6 +253,16 @@ def p_consumtion():
 		chart_data['eatingout_3'].append(result['Soft drinks nc hc'])
 		chart_data['eatingout_4'].append(result['Soft drinks c lc'])
 		chart_data['eatingout_5'].append(result['Soft drinks nc lc'])
+
+	query_consumption2 = db['QuantitySugarHousehold.csv'].find().sort('Year', 1)
+	for result in query_consumption2:
+		chart_data['consumption_years2'].append(result['Year'])
+		chart_data['consumption_7'].append(result['Soft drinks'].replace('.',''))
+		chart_data['consumption_8'].append(result['Soft drinks c hc'])
+		chart_data['consumption_9'].append(result['Soft drinks nc hc'])
+		chart_data['consumption_10'].append(result['Soft drinks c lc'])
+		chart_data['consumption_11'].append(result['Soft drinks nc lc'])
+
 	return render_template('p_consumption.html', chart_data = chart_data)
 
 @app.route('/presentation/sugarprice')
