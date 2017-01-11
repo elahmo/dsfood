@@ -43,6 +43,78 @@
 			});
 	    </script>
 	  </div>
-	</div>
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">Regional breakdown</h3>
+    </div>
+    <div class="panel-body">
+      <h4>Relation between sugar consumption and regional obesity cases</h4>
+      <select name="region">
+        <option value="England" selected>England</option>
+        <option value="North_East">North_East</option>
+        <option value="North_West">North_West</option>
+        <option value="Yorkshire_and_The_Humber">Yorkshire_and_The_Humber</option>
+        <option value="East_Midlands">East_Midlands</option>
+        <option value="West_Midlands">West_Midlands</option>
+        <option value="East">East</option>
+        <option value="London">London</option>
+        <option value="South_East">South_East</option>
+        <option value="South_West">South_West</option>
+      </select>
+      <div class="ct-chart ct-octave health-chart"></div>
+      <script type="text/javascript">
+        $('[name="region"]').on('change', function(e){          
+          window.chart = Chartist.Line('.health-chart', window[e.target.value], options);
+        });
+        var data = {
+          labels: [{%for year in years%}'{{year}}',{%endfor%}],
+          series: [
+          [{{chart_data['England']['obesity']|join(', ')}}],
+          [{{chart_data['England']['consumption']|join(', ')}}],
+          [{{chart_data['England']['hc']|join(', ')}}],
+          [{{chart_data['England']['lc']|join(', ')}}]
+          ]
+        };
+        var options = {
+          plugins : [
+            Chartist.plugins.legend({
+                    legendNames: ['Obesity' , 'Consumption total' , 'High calorie' , 'Low calorie'],
+                    position: 'top'
+                }),
+                Chartist.plugins.tooltip()
+          ]
+        };
+
+        var chart = Chartist.Line('.health-chart', data, options);
+        window.chart = chart;
+        chart.on('draw', function(data) {
+          if(data.type === 'line' || data.type === 'area') {
+            data.element.animate({
+              d: {
+                begin: 200 * data.index,
+                dur: 500,
+                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                to: data.path.clone().stringify(),
+                easing: Chartist.Svg.Easing.easeOutQuint
+              }
+            });
+          }
+        });
+
+      </script>
+    </div>
+    <script type="text/javascript">
+    {%for region in chart_data.iterkeys()%}
+      window.{{region}} = {
+          labels: [{%for year in years%}'{{year}}',{%endfor%}],
+          series: [
+            [{{chart_data[region]['obesity']|join(', ')}}],
+            [{{chart_data[region]['consumption']|join(', ')}}],
+            [{{chart_data[region]['hc']|join(', ')}}],
+            [{{chart_data[region]['lc']|join(', ')}}]
+          ]
+        };
+    {%endfor%}  
+    </script>
 </div>
 {% endblock %}

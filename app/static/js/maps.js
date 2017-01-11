@@ -29,7 +29,7 @@ var DiabetesChoropleth = {
     window.info.update = function (props) {
         // console.log(props);
         this._div.innerHTML = '<h4>Obesity cases per region</h4>' +  (props ?
-            '<b>' + props.ccg_name + '</b><br /><b>' + props.registered_patients + '</b> diabetes cases' +
+            '<b>' + props.ccg_name + '</b><br /><b>' + props.registered_patients + '</b> obesity cases' +
             '</b><br /><b>' + props.cases_per_100k + ' </b>cases per 100k'
             : 'Hover over a region');
     };
