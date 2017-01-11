@@ -3,49 +3,6 @@
 <div class="container">
 	<div class="panel panel-info">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Soft drinks consumption - All food Expenses</h3>
-	  </div>
-	  <div class="panel-body">
-	  <div class="ct-chart ct-octave consumption-chart-price"></div>
-	  	<script type="text/javascript">
-	  		var data = {
-			  labels: [{%for year in chart_data['consumption_years']%}'{{year}}',{%endfor%}],
-			  series: [
-				[{{chart_data['consumption_1']|join(', ')}}],
-				[{{chart_data['consumption_2']|join(', ')}}],
-				[{{chart_data['consumption_3']|join(', ')}}],
-				[{{chart_data['consumption_4']|join(', ')}}],
-				[{{chart_data['consumption_5']|join(', ')}}]
-			  ]
-			};
-			var options = {
-				plugins : [
-					Chartist.plugins.legend({
-			            legendNames: ['Soft drinks' , 'Soft drinks c hc' , 'Soft drinks nc hc' , 'Soft drinks c lc' , 'Soft drinks nc lc'],
-			            position: 'top'
-			        }),
-			        Chartist.plugins.tooltip()
-				]
-			};
-			var chart = Chartist.Line('.consumption-chart-price', data, options);
-			chart.on('draw', function(data) {
-			  if(data.type === 'line' || data.type === 'area') {
-			    data.element.animate({
-			      d: {
-			        begin: 200 * data.index,
-			        dur: 500,
-			        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-			        to: data.path.clone().stringify(),
-			        easing: Chartist.Svg.Easing.easeOutQuint
-			      }
-			    });
-			  }
-			});
-	  	</script>
-	  </div>
-	</div>
-	<div class="panel panel-info">
-	  <div class="panel-heading">
 	    <h3 class="panel-title">Soft drinks consumption - Eating out and household expenses</h3>
 	  </div>
 	  <div class="panel-body">

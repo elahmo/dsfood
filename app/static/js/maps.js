@@ -7,7 +7,7 @@ function getCode(code) {
 var DiabetesChoropleth = {
   init: function(div, year) {
     this.div = div;
-    this.map = L.map(this.div).setView([53.0, -1.5], 6);
+    this.map = L.map(this.div).setView([53.0, -1.5], 7);
     window.map = this.map;
     
     L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
@@ -128,7 +128,7 @@ function zoomToFeature(e) {
        window.zoomed = true;
        window.map.fitBounds(e.target.getBounds()); 
     } else {
-       window.map.setView([53.0, -1.5], 6)
+       window.map.setView([53.0, -1.5], 7)
        window.zoomed = false;
     } 
     
