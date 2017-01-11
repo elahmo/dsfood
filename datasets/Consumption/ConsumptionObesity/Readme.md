@@ -1,3 +1,7 @@
-Dataset combining the soft drink consumption and obesity cases from 2006 - 2014 
+Dataset combining the soft drink consumption and obesity cases
 
-http://webarchive.nationalarchives.gov.uk/20130103014432/http://www.defra.gov.uk/statistics/foodfarm/food/familyfood/nationalfoodsurvey/
+Range:
+	2006 - 2014 
+
+Sources:
+	Combination of Obesity data and soft drink consumption data 
