@@ -321,9 +321,9 @@ def p_sugarprice():
 
 	return render_template('p_sugarprice.html', chart_data = chart_data)
 
-@app.route('/presentation/summary')
-def p_summary():
-	return render_template('p_summary.html')
+@app.route('/presentation/analysis')
+def p_analysis():
+	return render_template('p_analysis.html')
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
