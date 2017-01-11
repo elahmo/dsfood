@@ -8,9 +8,39 @@
 	  </div>
 	  <div class="panel-body">
 	  	<h4>Heatmap for England, showing the regional distribution of obesity cases</h4>
+	    <!-- <div class="radio radio-inline">
+          <label>
+            <input type="radio" name="radio-years" value="2012" checked=""><span class="circle"></span><span class="check"></span>
+            2012
+          </label>
+        </div>
+        <div class="radio radio-inline">
+          <label>
+            <input type="radio" name="radio-years" value="2013" checked=""><span class="circle"></span><span class="check"></span>
+            2013
+          </label>
+        </div> -->
+        <div class="radio radio-inline">
+          <label>
+            <input type="radio" name="radio-years" value="2014" checked=""><span class="circle"></span><span class="check"></span>
+            2014
+          </label>
+        </div>
+        <div class="radio radio-inline">
+          <label>
+            <input type="radio" name="radio-years" value="2015" checked=""><span class="circle"></span><span class="check"></span>
+            2015
+          </label>
+        </div>
+      	</div>
 	  	<div id="choroplethmap"></div>
+      <script type="text/javascript" src='/static/csv/ccg2ons.js'></script>
 	    <script>
-	      DiabetesChoropleth.init('choroplethmap');
+	      DiabetesChoropleth.init('choroplethmap', );
+	      $('[name="radio-years"]').on('change', function(e){
+			    var year= e.target.value
+			    DiabetesChoropleth.refresh(year);
+			});
 	    </script>
 	  </div>
 	</div>
