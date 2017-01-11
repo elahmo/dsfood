@@ -61,33 +61,36 @@
         <option value="South_East">South_East</option>
         <option value="South_West">South_West</option>
       </select>
-      <div class="ct-chart ct-octave health-chart"></div>
+      <div class='clearfix'></div>
+      <br>
+      <div class="ct-chart ct-octave health-chart1"></div>
+      <div class="ct-chart ct-octave health-chart2"></div>
       <script type="text/javascript">
         $('[name="region"]').on('change', function(e){          
-          window.chart = Chartist.Line('.health-chart', window[e.target.value], options);
+          window.chart1 = Chartist.Line('.health-chart1', window[e.target.value+'1'], options1);
+          window.chart2 = Chartist.Line('.health-chart2', window[e.target.value+'2'], options2);
         });
-        var data = {
+        var data1 = {
           labels: [{%for year in years%}'{{year}}',{%endfor%}],
           series: [
-          [{{chart_data['England']['obesity']|join(', ')}}],
           [{{chart_data['England']['consumption']|join(', ')}}],
           [{{chart_data['England']['hc']|join(', ')}}],
           [{{chart_data['England']['lc']|join(', ')}}]
           ]
         };
-        var options = {
+        var options1 = {
           plugins : [
             Chartist.plugins.legend({
-                    legendNames: ['Obesity' , 'Consumption total' , 'High calorie' , 'Low calorie'],
+                    legendNames: ['Consumption total' , 'High calorie' , 'Low calorie'],
                     position: 'top'
                 }),
                 Chartist.plugins.tooltip()
           ]
         };
 
-        var chart = Chartist.Line('.health-chart', data, options);
-        window.chart = chart;
-        chart.on('draw', function(data) {
+        var chart1 = Chartist.Line('.health-chart1', data1, options1);
+        window.chart1 = chart1;
+        chart1.on('draw', function(data) {
           if(data.type === 'line' || data.type === 'area') {
             data.element.animate({
               d: {
@@ -100,20 +103,55 @@
             });
           }
         });
+        var data2 = {
+          labels: [{%for year in years%}'{{year}}',{%endfor%}],
+          series: [
+          [{{chart_data['England']['obesity']|join(', ')}}]
+          ]
+        };
+        var options2 = {
+          plugins : [
+            Chartist.plugins.legend({
+                    legendNames: ['obesity'],
+                    position: 'top'
+                }),
+                Chartist.plugins.tooltip()
+          ]
+        };
 
+        var chart2 = Chartist.Line('.health-chart2', data2, options2);
+        window.chart2 = chart2;
+        chart2.on('draw', function(data) {
+          if(data.type === 'line' || data.type === 'area') {
+            data.element.animate({
+              d: {
+                begin: 200 * data.index,
+                dur: 500,
+                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                to: data.path.clone().stringify(),
+                easing: Chartist.Svg.Easing.easeOutQuint
+              }
+            });
+          }
+        });
       </script>
     </div>
     <script type="text/javascript">
     {%for region in chart_data.iterkeys()%}
-      window.{{region}} = {
+      window.{{region+'1'}} = {
           labels: [{%for year in years%}'{{year}}',{%endfor%}],
           series: [
-            [{{chart_data[region]['obesity']|join(', ')}}],
             [{{chart_data[region]['consumption']|join(', ')}}],
             [{{chart_data[region]['hc']|join(', ')}}],
             [{{chart_data[region]['lc']|join(', ')}}]
           ]
         };
+      window.{{region+'2'}} = {
+        labels: [{%for year in years%}'{{year}}',{%endfor%}],
+        series: [
+            [{{chart_data[region]['obesity']|join(', ')}}]
+        ]
+      };
     {%endfor%}  
     </script>
 </div>

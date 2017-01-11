@@ -271,3 +271,11 @@ line#drop {
 }
 
 /*prices charts*/
+.health-chart1 {
+  width: 49%;
+  float: left;
+}
+.health-chart2 {
+  width: 49%;
+  float: right;
+}
