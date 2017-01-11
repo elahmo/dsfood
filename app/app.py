@@ -182,7 +182,66 @@ def presentation():
 
 @app.route('/presentation/health')
 def p_health():
-	return render_template('p_health.html')
+	#get the data from db about health and consumption
+	chart_data = {}
+	years = ['2006','2007','2008','2009','2010','2011','2012','2013','2014']
+	chart_data['England'] = {}
+	chart_data['England']['obesity'] = []
+	chart_data['England']['consumption'] = []
+	chart_data['England']['hc'] = []
+	chart_data['England']['lc'] = []
+	chart_data['North_East'] = {}
+	chart_data['North_East']['obesity'] = []
+	chart_data['North_East']['consumption'] = []
+	chart_data['North_East']['hc'] = []
+	chart_data['North_East']['lc'] = []
+	chart_data['North_West'] = {}
+	chart_data['North_West']['obesity'] = []
+	chart_data['North_West']['consumption'] = []
+	chart_data['North_West']['hc'] = []
+	chart_data['North_West']['lc'] = []
+	chart_data['Yorkshire_and_The_Humber'] = {}
+	chart_data['Yorkshire_and_The_Humber']['obesity'] = []
+	chart_data['Yorkshire_and_The_Humber']['consumption'] = []
+	chart_data['Yorkshire_and_The_Humber']['hc'] = []
+	chart_data['Yorkshire_and_The_Humber']['lc'] = []
+	chart_data['East_Midlands'] = {}
+	chart_data['East_Midlands']['obesity'] = []
+	chart_data['East_Midlands']['consumption'] = []
+	chart_data['East_Midlands']['hc'] = []
+	chart_data['East_Midlands']['lc'] = []
+	chart_data['West_Midlands'] = {}
+	chart_data['West_Midlands']['obesity'] = []
+	chart_data['West_Midlands']['consumption'] = []
+	chart_data['West_Midlands']['hc'] = []
+	chart_data['West_Midlands']['lc'] = []
+	chart_data['East'] = {}
+	chart_data['East']['obesity'] = []
+	chart_data['East']['consumption'] = []
+	chart_data['East']['hc'] = []
+	chart_data['East']['lc'] = []
+	chart_data['London'] = {}
+	chart_data['London']['obesity'] = []
+	chart_data['London']['consumption'] = []
+	chart_data['London']['hc'] = []
+	chart_data['London']['lc'] = []
+	chart_data['South_East'] = {}
+	chart_data['South_East']['obesity'] = []
+	chart_data['South_East']['consumption'] = []
+	chart_data['South_East']['hc'] = []
+	chart_data['South_East']['lc'] = []
+	chart_data['South_West'] = {}
+	chart_data['South_West']['obesity'] = []
+	chart_data['South_West']['consumption'] = []
+	chart_data['South_West']['hc'] = []
+	chart_data['South_West']['lc'] = []
+	query_consumption = db['ObesitySoftDRinks_Caloric_NonCaloric.csv'].find().sort('Year', 1)
+	for result in query_consumption:
+		chart_data[result['region']]['obesity'].append(float(result['obesity'].replace('.','').replace(',', '.')))
+		chart_data[result['region']]['consumption'].append(float(result['consumption'].replace('.','').replace(',', '.')))
+		chart_data[result['region']]['hc'].append(float(result['caloric'].replace('.','').replace(',', '.')))
+		chart_data[result['region']]['lc'].append(float(result['non-caloric'].replace('.','').replace(',', '.')))
+	return render_template('p_health.html', chart_data=chart_data, years=years)
 
 @app.route('/presentation/consumption')
 def p_consumtion():
