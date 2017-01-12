@@ -57,6 +57,27 @@
    border-color: #453d3f;
 }
 
+.ct-legend .ct-series-5:before {
+   background-color: #ef3b2c;
+   border-color: #ef3b2c;
+}
+.ct-legend .ct-series-6:before {
+   background-color: #fb6a4a;
+   border-color: #fb6a4a;
+}
+.ct-legend .ct-series-7:before {
+   background-color: #fc9272;
+   border-color: #fc9272;
+}
+.ct-legend .ct-series-8:before {
+   background-color: #fcbba1;
+   border-color: #fcbba1;
+}
+.ct-legend .ct-series-9:before {
+   background-color: #fee0d2;
+   border-color: #fee0d2;
+}
+
 .crazyPink li.ct-series-0:before {
   background-color: #C2185B;
   border-color: #C2185B;

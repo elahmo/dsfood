@@ -80,6 +80,56 @@
 	    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	  </div>
+
+	  <h4>Obesity cases in the past 10 years</h4>
+	  	<div class="ct-chart ct-octave obesity-chart-index2"></div>
+	  	<script type="text/javascript">
+	  		var data2 = {
+			  labels: [{%for year in chart_data['age_years']%}'{{year}}',{%endfor%}],
+			  series: [
+				  [{{chart_data['ages_all']|join(', ')}}],
+				  [{{chart_data['ages_16']|join(', ')}}],
+				  [{{chart_data['ages_24']|join(', ')}}],
+				  [{{chart_data['ages_34']|join(', ')}}],
+				  [{{chart_data['ages_44']|join(', ')}}],
+				  [{{chart_data['ages_54']|join(', ')}}],
+				  [{{chart_data['ages_64']|join(', ')}}],
+				  [{{chart_data['ages_74']|join(', ')}}],
+				  [{{chart_data['ages_over']|join(', ')}}],
+				  [{{chart_data['ages_unknown']|join(', ')}}]
+			  ]
+			};
+			var options2 = {
+				plugins : [
+					Chartist.plugins.legend({
+			            legendNames: ['All ages', 'Under 16', '16 to 24', '35 to 44', '35 to 44', '45 to 54', '55 to 64', '65 to 74', '75 and over', 'Unknown'],
+			            position: 'top'
+			        }),
+			        Chartist.plugins.tooltip()
+				]
+			};
+			var chart2 = Chartist.Line('.obesity-chart-index2', data2, options2);
+			chart2.on('draw', function(data) {
+			  if(data.type === 'line' || data.type === 'area') {
+			    data.element.animate({
+			      d: {
+			        begin: 200 * data.index,
+			        dur: 500,
+			        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+			        to: data.path.clone().stringify(),
+			        easing: Chartist.Svg.Easing.easeOutQuint
+			      }
+			    });
+			  }
+			});
+	  	</script>
+	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	  </div>
 	</div>
 </div>
 {% endblock %}
