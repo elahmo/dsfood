@@ -413,21 +413,3 @@ lines(sort(n_sd_sum_lc), fitted(qdlm_75_sd_sum_lc)[order(n_sd_sum_lc)], col="red
 
 cov_75_sd_sum_lc
 cor_75_sd_sum_lc
-
-sum_cov_sugar <- c(cov_all_sugar, cov_male_sugar, cov_female_sugar, cov_under16_sugar, cov_16_24_sugar, cov_25_34_sugar, cov_35_44_sugar, cov_45_54_sugar, cov_55_64_sugar, cov_65_74_sugar, cov_75_over_sugar)
-sum_cor_sugar <- c(cor_all_sugar, cor_male_sugar, cor_female_sugar, cor_under16_sugar, cor_16_24_sugar, cor_25_34_sugar, cor_35_44_sugar, cor_45_54_sugar, cor_55_64_sugar, cor_65_74_sugar, cor_75_over_sugar)
-sum_cov_soft <- c(cov_all_soft, cov_male_soft, cov_female_soft, cov_under16_soft, cov_16_24_soft, cov_25_34_soft, cov_35_44_soft, cov_45_54_soft, cov_55_64_soft, cov_65_74_soft, cov_75_over_soft)
-sum_cor_soft <- c(cor_under16_soft, cor_16_24_soft, cor_25_34_soft, cor_35_44_soft, cor_45_54_soft, cor_55_64_soft, cor_65_74_soft, cor_75_over_soft)
-
-bar = barplot(sum_cor_sugar, ylim=c(-0.5,0.8))
-lines(x = bar, y=sum_cov_sugar)
-
-bar = barplot(sum_cor_soft, ylim=c(-0.5,0.6))
-lines(x = bar, y=sum_cov_soft)
-title(main = "Correlation of Soft Drinks Consumption and Obesity",
-      xlab = "demography", ylab="obesity",
-      cex.main = 2, font.main = 2, col.main = "black",
-      cex.sub = 1.25, font.sub = 1, col.sub = "blue")
-
-all_sum <- c(sum_cov_sugar, sum_cor_sugar, sum_cov_soft, sum_cor_soft)
-write.table(all_sum, "all_sum_value", sep="\t", row.names=FALSE, col.names=FALSE)
