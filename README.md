@@ -9,6 +9,16 @@ This will be used to store all of our files, meeting notes, data sets and other 
 - /datasets (used to store our datasets, both raw and cleaned)
 - /app      (source code for the app)
 
+
+# Commit counts, adjusted for unknown commits
+Ahmet	116
+Lingga	71
+Gerard	32
+Chidi	25
+Ada	17
+----------
+total: 261
+
 # Commit convention
 
 So for the commits these are the rules to follow: 
