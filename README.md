@@ -16,7 +16,7 @@ Lingga	71
 Gerard	32
 Chidi	25
 Ada	17
-----------
+
 total: 261
 
 # Commit convention
