@@ -149,34 +149,31 @@ def presentation():
 		chart_data['health_female'].append(result['Female'].replace(',',''))
 		chart_data['health_unknown'].append(result['Unknown'].replace(',',''))
 
-	chart_data['consumption_years'] = []
-	chart_data['consumption_1'] = []
-	chart_data['consumption_2'] = []
-	chart_data['consumption_3'] = []
-	chart_data['consumption_4'] = []
-	chart_data['consumption_4'] = []
-	chart_data['consumption_5'] = []
-	chart_data['consumption_6'] = []
-	chart_data['consumption_7'] = []
-	chart_data['consumption_8'] = []
-	chart_data['consumption_9'] = []
-	chart_data['consumption_10'] = []
-	chart_data['consumption_11'] = []
+	chart_data['ages_years'] = []
+	chart_data['ages_all'] = []
+	chart_data['ages_16'] = []
+	chart_data['ages_24'] = []
+	chart_data['ages_34'] = []
+	chart_data['ages_44'] = []
+	chart_data['ages_54'] = []
+	chart_data['ages_64'] = []
+	chart_data['ages_74'] = []
+	chart_data['ages_over'] = []
+	chart_data['ages_unknown'] = []
 
-	query_consumption = db['QuantitySugarHousehold.csv'].find().sort('Year', 1)
-	for result in query_consumption:
-		chart_data['consumption_years'].append(result['Year'])
-		chart_data['consumption_1'].append(result['Sugar and preserves'])
-		chart_data['consumption_2'].append(result['Sugar'])
-		chart_data['consumption_3'].append(result['Jams and fruit curds'])
-		chart_data['consumption_4'].append(result['Marmalade'])
-		chart_data['consumption_5'].append(result['Syrup'])
-		chart_data['consumption_6'].append(result['Honey'])
-		chart_data['consumption_7'].append(result['Soft drinks'].replace('.',''))
-		chart_data['consumption_8'].append(result['Soft drinks c hc'])
-		chart_data['consumption_9'].append(result['Soft drinks nc hc'])
-		chart_data['consumption_10'].append(result['Soft drinks c lc'])
-		chart_data['consumption_11'].append(result['Soft drinks nc lc'])
+	query_age = db['health_diagnosis_gender_years_age.csv'].find().sort('Year', 1)
+	for result in query_age:
+		chart_data['ages_years'].append(result['Year'].replace(',',''))
+		chart_data['ages_all'].append(result['All ages'].replace(',',''))
+		chart_data['ages_16'].append(result['Under 16'].replace(',',''))
+		chart_data['ages_24'].append(result['16 to 24'].replace(',',''))
+		chart_data['ages_34'].append(result['35 to 44'].replace(',',''))
+		chart_data['ages_44'].append(result['35 to 44'].replace(',',''))
+		chart_data['ages_54'].append(result['45 to 54'].replace(',',''))
+		chart_data['ages_64'].append(result['55 to 64'].replace(',',''))
+		chart_data['ages_74'].append(result['65 to 74'].replace(',',''))
+		chart_data['ages_over'].append(result['75 and over'].replace(',',''))
+		chart_data['ages_unknown'].append(result['Unknown'].replace(',',''))
 
 	return render_template('p_index.html', chart_data = chart_data)
 

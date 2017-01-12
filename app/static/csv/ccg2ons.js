@@ -1,4 +1,4 @@
-var PCOLIST = [
+[
       {
         "-id": "E16000001",
         "onscode": "E16000001",
@@ -285,7 +285,6 @@ var PCOLIST = [
           "name": "NHS Salford CCG",
           "onscode" : "E38000143",
           "pcd_percent": "100.0"
-		  // actually there is 1 pcd belonging to E38000123 in Feb 2016 data, but treated here as rounding error due to pcd centroid inaccuracies
         }
       },
       {
@@ -394,7 +393,6 @@ var PCOLIST = [
           "name": "NHS Ealing CCG",
           "onscode" : "E38000048",
           "pcd_percent": "100.0"
-		  // actually there are 2 pcds belonging to E38000084 in Feb 2016 data, but treated here as rounding error due to pcd centroid inaccuracies
         }
       },
       {
@@ -515,7 +513,6 @@ var PCOLIST = [
           "name": "NHS Brent CCG",
           "onscode" : "E38000020",
           "pcd_percent": "100.0"
-		  // actually there is 1 pcd belonging to E38000202 in Feb 2016 data, but treated here as rounding error due to pcd centroid inaccuracies
         }
       },
       {
@@ -656,8 +653,6 @@ var PCOLIST = [
         "nhscode": "5LC",
         "name": "Westminster",
         "CCG": [
-		  // the old figures, based on oa gave a much higher percentage (c. 26%) to West London CCG.  Postcode counts may be more accurate, being smaller entities, or less accurate, being approx. by centroids.  Hard to tell.
-		  // there is also 1 pcd belonging to E38000035 in Feb 2016 data, but treated here as rounding error due to pcd centroid inaccuracies
           {
             "code": "09A",
             "name": "NHS Central London (Westminster) CCG",
@@ -706,7 +701,6 @@ var PCOLIST = [
           "name": "NHS Lewisham CCG",
           "onscode" : "E38000098",
           "pcd_percent": "100.0"
-		  // there is 1 pcd belonging to E38000066 in Feb 2016 data, but treated here as rounding error due to pcd centroid inaccuracies
         }
       },
       {
@@ -1535,7 +1529,6 @@ var PCOLIST = [
             "onscode" : "E38000118",
             "pcd_percent": "4.49"
           }
-  		  // there is 1 pcd belonging to E38000040 in Feb 2016 data, but treated here as rounding error due to pcd centroid inaccuracies
         ]
       },
       {
@@ -1717,7 +1710,6 @@ var PCOLIST = [
           "onscode" : "E38000012",
           "pcd_percent": "100.0"
         }
-		// there is 1 pcd belonging to E38000013 in Feb 2016 data, but treated here as rounding error due to pcd centroid inaccuracies
       },
       {
         "-id": "E16000118",
@@ -2315,7 +2307,6 @@ var PCOLIST = [
             "onscode" : "E38000032",
             "pcd_percent": "30.18"
           }
-		   // there are also 2 further mappings in Feb 2016 data: E38000187 (1 pcd), E38000143 (1 pcd).  These are treated here as rounding error due to pcd centroid inaccuracies		  
         ]
       },
       {
@@ -2425,4 +2416,3 @@ var PCOLIST = [
         }
       }
     ]
-	;

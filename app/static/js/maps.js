@@ -27,7 +27,7 @@ var DiabetesChoropleth = {
     };
 
     window.info.update = function (props) {
-        // console.log(props);
+        console.log(props);
         this._div.innerHTML = '<h4>Obesity cases per region</h4>' +  (props ?
             '<b>' + props.ccg_name + '</b><br /><b>' + props.registered_patients + '</b> obesity cases' +
             '</b><br /><b>' + props.cases_per_100k + ' </b>cases per 100k'
@@ -39,12 +39,7 @@ var DiabetesChoropleth = {
     if (!year){
         year = '2015';
     }
-    if (year == '2013'){
-        mergedFeatureLayer(this.map, "/static/csv/map_health"+year+".csv", "/static/js/ukla.json", "LAD13CD", this.style, null, null, "lad", true);
-
-    }else{
-        mergedFeatureLayer(this.map, "/static/csv/map_health"+year+".csv", "/static/js/ukboundaries.json", "ccg_code", this.style, null, null, "ccg_boundaries");
-    }
+    mergedFeatureLayer(this.map, "/static/csv/map_health"+year+".csv", "/static/js/ukboundaries.json", "ccg_code", this.style, null, null, "ccg_boundaries");
     addLegend([0, 100, 200, 300, 400, 500, 600, 800, 1000, 1500, ''], this.map, this.color);
 
   },
@@ -73,7 +68,7 @@ var DiabetesChoropleth = {
     else if (d > 300){ return '#fc9272'}
     else if (d > 200){ return '#fcbba1'}
     else if (d > 100){ return '#fee0d2'}
-    else {return '#ffe4d7'};
+    else {return '#ffffff'};
             
   },
   style: function(feature) {
@@ -247,7 +242,7 @@ var mergedFeatureLayer = function mergedFeatureLayer(map, csvDir, jsonDir, joinF
 
     buildingData.done(function (d) {
         var mergedLayer = L.geoJson(d, {style: style, onEachFeature: window.onEachFeature, pointToLayer: pointToLayer}).addTo(map);
-        // console.log("Loading merged data: "+csvDir+" and "+jsonDir);
+        console.log("Loading merged data: "+csvDir+" and "+jsonDir);
         window.geojson = mergedLayer;
         mergedLayer.bringToFront();
 
@@ -313,6 +308,7 @@ var mergedClusteredMarkers = function mergedClusteredMarkers(map, csvDir, jsonDi
 
 
 function processData(csvData, features, joinKey) {
+    console.log(csvData, features, joinKey);
     var joinFieldObject = {};
 
     jQuery.each(features, function (index, object) {
@@ -327,7 +323,7 @@ function processData(csvData, features, joinKey) {
 
 var featureLayer = function featureLayer(map, jsonDir, defaultStyle, featureObject) {
     var layer = L.geoJson(null, { style: defaultStyle});
-    // console.log("Loading feature data: "+jsonDir);
+    //console.log("Loading feature data: "+jsonDir);
     map.addLayer(layer);
     d3.json(jsonDir, function (error, data) {
         var pcts = topojson.feature(data, data.objects[featureObject]);
