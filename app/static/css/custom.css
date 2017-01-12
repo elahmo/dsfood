@@ -1,6 +1,10 @@
 .ct-chart {
    position: relative;
 }
+.ct-label {
+  color: black !important;
+  font-size: 1rem;
+}
 .ct-legend {
    position: relative;
    z-index: 10;

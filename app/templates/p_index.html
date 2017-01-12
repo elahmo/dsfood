@@ -59,13 +59,12 @@
 			  }
 			});
 	  	</script>
-	  </div>
 
 	  <h4>Obesity cases in the past 10 years</h4>
 	  	<div class="ct-chart ct-octave obesity-chart-index2"></div>
 	  	<script type="text/javascript">
 	  		var data2 = {
-			  labels: [{%for year in chart_data['age_years']%}'{{year}}',{%endfor%}],
+			  labels: [{%for year in chart_data['ages_years']%}'{{year}}',{%endfor%}],
 			  series: [
 				  [{{chart_data['ages_all']|join(', ')}}],
 				  [{{chart_data['ages_16']|join(', ')}}],
@@ -103,6 +102,7 @@
 			  }
 			});
 	  	</script>
+	  </div>
 	  </div>
 	</div>
 </div>
