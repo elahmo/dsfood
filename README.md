@@ -21,11 +21,16 @@ This will be used to store all of our files, meeting notes, data sets and other 
 - from app dir, run pip install -r requirements
 - run the importer script from import/
 - python app.py and open localhost:8080
+
 # Commit counts, adjusted for unknown commits
 Ahmet	116
+
 Lingga	71
+
 Gerard	32
+
 Chidi	25
+
 Ada	17
 
 total: 261
