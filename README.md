@@ -42,8 +42,6 @@ So for the commits these are the rules to follow:
 # VM Server
 
 Address : svm-sy1n15-comp6235-group.ecs.soton.ac.uk
-User    : user
-Pass    : awesomeGroup2
 
 Note 30/11/16
 I've moved our dsfood project to /var/www as it seems to be configured in apache2 instead of running directly with flask.
