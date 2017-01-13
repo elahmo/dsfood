@@ -8,8 +8,19 @@ This will be used to store all of our files, meeting notes, data sets and other 
 - /meetings (used to store all of our meeting notes)
 - /datasets (used to store our datasets, both raw and cleaned)
 - /app      (source code for the app)
+- /demo     (recording of the app)
+- /analysis (some statistical things)
+- /documents
+- /presentation (pptx for presentation)
+- /scripts  (various scripts)
 
 
+# How to run the app
+
+- have mongo installed, with default credentials, if those are changed, the app has to be updated to run them
+- from app dir, run pip install -r requirements
+- run the importer script from import/
+- python app.py and open localhost:8080
 # Commit counts, adjusted for unknown commits
 Ahmet	116
 Lingga	71
