@@ -1,85 +1,51 @@
 # dsfood
-A GitHub repository for the Data Science final project regarding food, health, and consumtion.
+A GitHub repository for the final project in Foundations of Data Science (COMP6235). The project was performed during Fall 2016 at University of Southampton. The theme for the project was about food.
 
-This will be used to store all of our files, meeting notes, data sets and other files.
+The repository contrains all of files that were created during the work, including backend and frontend for the application, meeting notes, datasets and scripts to parse data, presentation and demonstration, and other files.
 
 # Structure
 
-- /meetings (used to store all of our meeting notes)
-- /datasets (used to store our datasets, both raw and cleaned)
-- /app      (source code for the app)
-- /demo     (recording of the app)
-- /analysis (some statistical things)
-- /documents
-- /presentation (pptx for presentation)
-- /scripts  (various scripts)
+- /analysis 	(statistics)
+- /app      	(source code for the app)
+- /datasets 	(used to store our datasets, both raw and cleaned)
+- /demo     	(recording of the app)
+- /meetings 	(used to store all of our meeting notes)
+- /presentation	(pptx for presentation)
+- /scripts	(various scripts)
+
+# Technical details
+
+The application backend is made with Python flask framework, and has two components:
+
+- backend, used for managing of the datasets that are loaded in the app
+- frontend, the presentation layer, showing the interactive map and other things relevant to the project
+
+# Datasets
+
+The following datasets are used in the realisation of this project:
+
+- [Consumption](datasets/Consumption)
+- [Health](datasets/Health)
+- [Healthy_Living_Data](datasets/Healthy_Living_Data)
+- [Nutritions](datasets/Nutritions)
+- [Sugar prices](datasets/Sugar prices)
+- [US Dollar Index](datasets/US Dollar Index)
+
+Each of the datasets has a corresponding description and source listed in the root directory.
 
 
 # How to run the app
 
 - have mongo installed, with default credentials, if those are changed, the app has to be updated to run them
-- from app dir, run pip install -r requirements
+- from app dir, run `pip install -r requirements`
 - run the importer script from import/
-- python app.py and open localhost:8080
+- `python app.py` and then browse the app at localhost:8080
 
-# Commit counts, adjusted for unknown commits
-Ahmet	116
-
-Lingga	71
-
-Gerard	32
-
-Chidi	25
-
-Ada	17
-
-total: 261
 
 # Commit convention
 
-So for the commits these are the rules to follow: 
+For the naming of the commits, to keep things sane, these are the rules to follow: 
 
 ###[folder_concerned][add/mod/del] Explanation 
 
-(Add = adding a file, mod = modification, del = deletion)
-
-
-# VM Server
-
-Address : svm-sy1n15-comp6235-group.ecs.soton.ac.uk
-
-Note 30/11/16
-I've moved our dsfood project to /var/www as it seems to be configured in apache2 instead of running directly with flask.
-I've added wsgi and config file in apache2 but still no luck...
-Apache2 configuration named dsfood.conf located in /etc/apache2/sites-available
-
-# Layout of the page (@gg)
-
-# Webapp - The sugar Tax
-
- ## Info to display
-
-Present the Question with graphs and data 
-	- explain the Tax and Data they rely on
-	- Basic graphs to show the importance of the subject 
-
-Show our research and findings + recommendations 
-	- UK region distribution of general sugar consumption VS health issues in those regions
-	- UK region distribution of soft drinks consumption VS health issues in those regions
-	- Soft drinks prices VS Expenses on soft drinks
-	- Soft drinks consumption VS price fluctuations
-	- Soft drinks consumption VS health issues
-	- historical sugar prices (+$ index for normaisation) VS general sugar consumption
-	- historical sugar prices VS soft drinks consumption
-
-/!\ Not forget to add Analytic data on this graphs if relevant
-
-Finish strongly with
-	- Conclusion graph on health VS soft drinks prices
-
-
-## Structure
-
-Either 
- - a long page
- - a multiple pages for the different information
+(add = adding a file, mod = modification, del = deletion)
