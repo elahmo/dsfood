@@ -28,8 +28,8 @@ The following datasets are used in the realisation of this project:
 - [Health](datasets/Health)
 - [Healthy_Living_Data](datasets/Healthy_Living_Data)
 - [Nutritions](datasets/Nutritions)
-- [Sugar_prices](datasets/Sugar_prices)
-- [US_Dollar_Index](datasets/US_Dollar_Index)
+- [Sugar prices](datasets/Sugar%20prices)
+- [US_Dollar Index](datasets/US%20Dollar%20Index)
 
 Each of the datasets has a corresponding description and source listed in the root directory.
 
