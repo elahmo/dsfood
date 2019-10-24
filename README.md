@@ -5,13 +5,13 @@ The repository contrains all of files that were created during the work, includi
 
 # Structure
 
-- /analysis 	(statistics)
-- /app      	(source code for the app)
-- /datasets 	(used to store our datasets, both raw and cleaned)
-- /demo     	(recording of the app)
-- /meetings 	(used to store all of our meeting notes)
-- /presentation	(pptx for presentation)
-- /scripts	(various scripts)
+- `/analysis` 	(statistics)
+- `/app`      	(source code for the app)
+- `/datasets` 	(used to store our datasets, both raw and cleaned)
+- `/demo`     	(recording of the app)
+- `/meetings` 	(used to store all of our meeting notes)
+- `/presentation`	(pptx for presentation)
+- `/scripts`	(various scripts)
 
 # Technical details
 
@@ -38,7 +38,7 @@ Each of the datasets has a corresponding description and source listed in the ro
 
 - have mongo installed, with default credentials, if those are changed, the app has to be updated to run them
 - from app dir, run `pip install -r requirements`
-- run the importer script from import/
+- run the importer script from `/import`
 - `python app.py` and then browse the app at localhost:8080
 
 
